@@ -1,0 +1,48 @@
+<ion-header [translucent]="true" class="ion-header-top">
+  <ion-toolbar class="ion-header-top">
+<!--Contenedor de los botones del header-->
+    <ion-buttons class="icons-button-container" slot="start">
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/login']">
+        <img class="icon-space" src="assets/images/login.png" alt="login" width="100%">
+      </ion-button>
+    </ion-buttons>
+<!--Título y logo del header-->
+    <ion-title class="title-anim">Barebones Games</ion-title>
+    <img src="assets/images/gamer skeleton.png" alt="Logo" width="13%" slot="end">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="div-container">
+
+    <ion-card class="card-container">
+
+      <ion-card-header>
+        <ion-card-title class="font-crd-title">
+          Recuperación de contraseña
+        </ion-card-title>
+        <ion-card-subtitle class="card-subtitle">
+          Ingrese la dirección de correo electrónico para enviarle un código de recuperación.
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content class="card-content">
+        Correo electrónico:
+      </ion-card-content>
+
+      <ion-item lines="none">
+        <ion-input class="ion-input" type="email" [clearInput]="true"></ion-input>
+      </ion-item>
+
+      <ion-button class="button-recup">
+        Enviar código
+      </ion-button>
+      <!--Debe enviar un código al correo-->
+      <!--Luego cambiar de pagina para ingresar el codigo y cambiar contraseña-->
+    </ion-card>
+
+  </div>
+
+</ion-content>

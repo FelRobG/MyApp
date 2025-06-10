@@ -1,20 +1,101 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="true" class="ion-header-top">
+  <ion-toolbar class="ion-header-top">
+<!--Contenedor de los botones del header-->
+    <ion-buttons class="icons-button-container" slot="start">
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/login']">
+        <img class="icon-space" src="assets/images/login.png" alt="login" width="100%">
+      </ion-button>
+      
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/tienda']">
+        <img class="icon-space" src="assets/images/tienda.png" alt="tienda" width="100%">
+      </ion-button>
+    </ion-buttons>
+<!--Título y logo del header-->
+    <ion-title class="title-anim">Barebones Games</ion-title>
+    <img src="assets/images/gamer skeleton.png" alt="Logo" width="13%" slot="end">
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?1</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="Bienvenido">
+    <h1><strong>¡Bienvenido!</strong></h1>
   </div>
+
+  <div class="info">
+    <p class="text-white"><b>Usuario:</b> {{ usuario }}</p> <!--Interpolación-->
+  </div>
+
+  <div>
+    <h2 class="info-title text-white"><b>
+      Información adicional</b>
+    </h2>
+  </div>
+
+  <div class="info-adicional">
+    
+    <ion-item class="item-custom" lines="none">
+      <ion-label position="fixed">Nombre</ion-label>
+      <ion-input 
+      class="form-input animacion-limp" 
+      [(ngModel)]="nombre"
+      [clearInput]="true"
+      slot="end"  
+    >
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="item-custom" lines="none">
+      <ion-label position="fixed">Apellido</ion-label>
+      <ion-input 
+      class="form-input animacion-limp" 
+      [(ngModel)]="apellido"
+      [clearInput]="true"
+      slot="end"
+    >
+    </ion-input>
+    </ion-item>
+
+    <ion-item class="item-custom" lines="none">
+      <ion-label position="fixed">Nivel educación</ion-label>
+      <ion-select class="animacion-limp" placeholder="Seleccione un nivel" slot="end" [(ngModel)]="educacion">
+        <ion-select-option value="basico">Básico
+        </ion-select-option>
+        <ion-select-option value="medio">Medio
+        </ion-select-option>
+        <ion-select-option value="universitario">Universitario
+        </ion-select-option>
+        <ion-select-option value="empleado">Empleado
+        </ion-select-option>
+        <ion-select-option value="nada">Prefiero no decirlo
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="item-custom" lines="none">
+      <ion-label class="form-nacimiento" position="fixed">Fecha de nacimiento</ion-label>
+      <mat-form-field class="input-nacimiento animacion-limp" slot="end">
+        <mat-label class="input-nacimiento">Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="nacimiento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </ion-item>
+
+    <ion-button class="button-home" (click)="limpiador()">
+      Limpiar campos
+    </ion-button>
+
+    <ion-button class="button-home" (click)="mostrarDatos()">
+      Mostrar nombre
+    </ion-button>
+
+
+    <ion-button class="button-home" (click)="guardarDatos()">
+      Guardar datos
+    </ion-button>
+  </div>
+  
+
 </ion-content>

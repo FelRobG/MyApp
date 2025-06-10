@@ -1,0 +1,112 @@
+.title-anim {
+  text-align: right;
+  font-weight: bold;
+  animation: shrinkTitle 2s forwards; // Definición de animación de título
+}
+
+@keyframes shrinkTitle { // Detalles de la animación de título
+  0% {
+    font-size: 12vw;
+    transform: scale(1) translate(5%,20%); // Comienza en tamaño grande y desplazado
+    opacity: 0;
+  }
+  100% {
+    font-size: 5vw;
+    transform: scale(1) translate(0%,0%); // Termina en tamaño y posición original
+    opacity: 1;
+  }
+}
+
+
+.ion-header-top{
+  display: flex;
+  color: black;
+  border-width: 0;
+  box-shadow: none;
+  --background: #f5cc00;
+  flex-direction: column;
+}
+
+.icons-button-container {
+  width: 25%;
+  height: 100%;
+}
+
+.icon-button {
+  width: 50%;
+  height: 100%;
+}
+
+ion-content {
+  --background: #1F1F2E;
+}
+
+.div-titulo {
+  font-size: 10vw;
+  text-align: center;
+  margin-top: 8vw;
+  margin-bottom: 9vw;
+  width: 100%;
+  height: 5%;
+}
+
+.div-container{
+  display: flex;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-crd-title {
+  color: #000000;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-top: 2vw;
+  margin-bottom: 5vw;
+}
+
+.card-container{
+  color:#000000;
+  display: flex;
+  width: 90vw;
+  height: 80vw;
+  flex-direction: column;
+  --background: rgb(255, 255, 255);
+}
+
+.card-subtitle{
+  color:#000000;
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+
+.card-content{
+  color: #000000;
+  font-size: 3.5vw;
+  margin-bottom: 1vw;
+}
+
+ion-item {
+  --background: rgb(255, 255, 255);
+}
+
+.ion-input{
+  border: 0.8vw solid #000000;
+  border-radius: 1vw;
+  --padding-start: 1.5vw;
+  --background: white;
+}
+
+.button-recup {
+  font-size: 3.5vw;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  width: 80vw;
+  height: 10vw;
+  color: #000000;
+  --background: #ffffff;
+  box-shadow: 3px 4px 3px;
+  border-color: black;
+  border: 2px solid;
+}

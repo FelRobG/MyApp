@@ -1,0 +1,152 @@
+<ion-header [translucent]="true" class="ion-header-top">
+  <ion-toolbar class="ion-header-top">
+<!--Contenedor de los botones del header-->
+    <ion-buttons class="icons-button-container" slot="start">
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/login']">
+        <img class="icon-space" src="assets/images/login.png" alt="login" width="100%">
+      </ion-button>
+    </ion-buttons>
+<!--Título y logo del header-->
+    <ion-title class="title-anim">Barebones Games</ion-title>
+    <img src="assets/images/gamer skeleton.png" alt="Logo" width="13%" slot="end">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="div-titulo">
+    <h1 class="font-h1">Cree una cuenta</h1>
+  </div>
+
+  <div class="div-formulario">
+    <!--FALTAN MÁS VALIDACIONES-->
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Nombre</ion-label>
+      <ion-input 
+        class="input-colors animacion-limp" 
+        placeholder="Ingrese su nombre"
+        [(ngModel)]="nombre" 
+        [clearInput]="true"
+        slot="end"
+      >
+      </ion-input>
+    </ion-item>
+
+        
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Apellido</ion-label>
+      <ion-input 
+        class="input-colors animacion-limp" 
+        placeholder="Ingrese su apellido"
+        [(ngModel)]="apellido" 
+        [clearInput]="true"
+        slot="end"
+      >
+    </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Usuario</ion-label>
+      <ion-input 
+        class="input-colors animacion-limp" 
+        placeholder="(de 3 a 8 caracteres)"
+        [(ngModel)]="usuario"
+        [clearInput]="true"
+        slot="end"
+      >
+    </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Contraseña</ion-label>
+      <ion-input 
+        class="input-colors animacion-limp" 
+        placeholder="(4 dígitos)"
+        [(ngModel)]="password" 
+        type="password" 
+        [clearInput]="true"
+        slot="end"
+      >
+    </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Confirmación</ion-label>
+      <ion-input 
+        class="input-colors animacion animacion-limp" 
+        placeholder="Repita su contraseña"
+        [(ngModel)]="confirmPassword" 
+        type="password" 
+        [clearInput]="true"
+        slot="end"
+      >
+    </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Nivel educación</ion-label>
+      <ion-select 
+      class="animacion-limp" 
+      placeholder="Seleccione un nivel"  
+      [(ngModel)]="educacion"
+      slot="end"
+      >
+        <ion-select-option value="basico">Básico
+        </ion-select-option>
+        <ion-select-option value="medio">Medio
+        </ion-select-option>
+        <ion-select-option value="universitario">Universitario
+        </ion-select-option>
+        <ion-select-option value="empleado">Empleado
+        </ion-select-option>
+        <ion-select-option value="nada">Prefiero no decirlo
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Email</ion-label>
+      <ion-input 
+        class="input-colors animacion animacion-limp" 
+        placeholder="Ingrese su correo"
+        [(ngModel)]="email" 
+        type="email"
+        [clearInput]="true"
+        slot="end"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label position="fixed">Num.teléfono</ion-label>
+      <ion-input 
+        class="input-colors animacion animacion-limp" 
+        placeholder="Ingrese su número"
+        [(ngModel)]="telefono" 
+        type="tel"
+        [clearInput]="true"
+        slot="end"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="form-linea" lines="none">
+      <ion-label class="form-nacimiento" position="fixed">Fecha nacimiento</ion-label>
+      <mat-form-field class="input-nacimiento animacion-limp" slot="end">
+        <mat-label class="input-nacimiento">Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="nacimiento">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </ion-item>
+
+    <ion-button class="button-registro" (click)="limpiador()">
+      Limpiar campos
+    </ion-button>
+
+    <ion-button class="button-registro" (click)="guardarDatos()">
+      Guardar datos
+    </ion-button>
+  </div>
+</ion-content>

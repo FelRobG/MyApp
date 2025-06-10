@@ -1,0 +1,54 @@
+<ion-header [translucent]="true" class="ion-header-top">
+  <ion-toolbar class="ion-header-top">
+<!--Contenedor de los botones del header-->
+    <ion-buttons class="icons-button-container" slot="start">
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/home']">
+        <img class="icon-space" src="assets/images/home.png" alt="home" width="100%">
+      </ion-button>
+      
+      <ion-button class="icon-button" fill="clear" [routerLink]="['/tienda']">
+        <img class="icon-space" src="assets/images/tienda.png" alt="tienda" width="100%">
+      </ion-button>
+    </ion-buttons>
+<!--Título y logo del header-->
+    <ion-title class="title-anim">Barebones Games</ion-title>
+    <img src="assets/images/gamer skeleton.png" alt="Logo" width="13%" slot="end">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="div-container">
+    <h1 class="title-font">Catálogo</h1>
+  </div>
+
+  <div class="div-general">
+    <div class="div-cards-container">
+      <ion-card class="card-juego">
+
+        <div class="card-juego-logo">
+          <img src="assets/images/street-fgt-logo.png" alt="Logo street fighter 6" height="100%" width="100%">
+        </div>
+        
+        <div class="card-juego-info">
+
+          <ion-card-title class="card-info-title">
+            Street Fighter 6
+          </ion-card-title>
+          <ion-card-subtitle class="card-info-subtitle">
+            Pelea, Acción, Rol
+          </ion-card-subtitle>
+
+          <div class="card-info-precio">
+            <span>$28.000</span>
+            <ion-button class="ion-button-compra">
+              Agregar a la lista
+            </ion-button>
+          </div>
+          
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

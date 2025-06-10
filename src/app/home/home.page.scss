@@ -1,27 +1,129 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.title-anim {
+  text-align: right;
+  font-weight: bold;
+  animation: shrinkTitle 2s forwards; /* Definición de animación de título*/
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+@keyframes shrinkTitle { /* Detalles de la animación de título*/
+  0% {
+    font-size: 12vw;
+    transform: scale(1) translate(5%,20%); /* Comienza en tamaño grande y desplazado*/
+    opacity: 0;
+  }
+  100% {
+    font-size: 5vw;
+    transform: scale(1) translate(0%,0%); /* Termina en tamaño original*/
+    opacity: 1;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.ion-header-top{
+  display: flex;
+  color: black;
+  border-width: 0;
+  box-shadow: none;
+  --background: #f5cc00;
+  flex-direction: column;
 }
 
-#container a {
-  text-decoration: none;
+ion-content {
+  --background: #1F1F2E;
+}
+ion-item {
+  --background: #1F1F2E; 
+}
+
+.icons-button-container {
+  width: 25%;
+  height: 100%;
+}
+
+.icon-button {
+  width: 100%;
+  height: 100%;
+}
+
+.Bienvenido{
+  color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.info-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-adicional {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.text-white {
+  color: rgb(211, 211, 211);
+}
+
+.item-custom {
+  color: rgb(211, 211, 211);
+  font-weight: bold;
+  font-size: 4vw;
+  white-space: nowrap;
+}
+
+.form-nacimiento {
+  font-weight: bold;
+  font-size: 4vw;
+  white-space: wrap;
+}
+
+.input-nacimiento {
+    margin-top: 4vw;
+    width: 51vw;
+    height: 15vw;
+    font-size: 1.8vh;
+}
+
+.form-input {
+  color: black;
+  --background: white;
+}
+
+.animacion-limp {
+  animation: slide-in 1s forwards; /* Definición de animación de limpieza*/
+}
+
+@keyframes slide-in { /* Detalles de la animación de limpieza*/
+  from {
+    transform: translateX(-200%); /* Comienza fuera de la pantalla*/
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Termina en posición original*/
+    opacity: 1;
+  }
+}
+
+.button-home {
+    font-size: 3.5vw;
+    margin-top: 4vw;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 10vw;
+    color: black;
+    --background: white;
+    box-shadow: 3px 4px 3px;
+    border-color: black;
+    border: 2px solid;
 }

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
+
+import { RegistroPageRoutingModule } from './registro-routing.module';
+
+import { RegistroPage } from './registro.page';
 // Importación de módulos de Angular Material: calendario
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,15 +18,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    RegistroPageRoutingModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
   ],
-  declarations: [HomePage]
+  declarations: [RegistroPage]
 })
-export class HomePageModule {
-
-  alertButtons = ['OK']; // Nombre del botón para cerrar la alerta
-}
+export class RegistroPageModule {}
