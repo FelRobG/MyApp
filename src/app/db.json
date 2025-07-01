@@ -1,0 +1,22 @@
+{
+  "lugares": [
+    {
+      "id": "1",
+      "nombre": "Plaza Central",
+      "lat": -33.4372,
+      "lng": -70.6506
+    },
+    {
+      "id": "2",
+      "nombre": "Parque Bicentenario",
+      "lat": -33.3998,
+      "lng": -70.5984
+    },
+    {
+      "id": "3",
+      "nombre": "Parque O'Higgins",
+      "lat": -33.4603,
+      "lng": -70.6543
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // importación del router
 import { AlertController } from '@ionic/angular'; // Importación para alertas
+import { DataServiceService } from '../data-service.service'; // Importación de servicio
 
 @Component({
   selector: 'app-registro',
@@ -21,7 +22,11 @@ export class RegistroPage implements OnInit {
   nacimiento: Date | null = null; // Fecha o null
   alertButtons = ['OK'];
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(
+    private router: Router, 
+    private alertController: AlertController, // Inyección de alerta
+    private dataService: DataServiceService // Inyección de servicio de base de datos
+  ) { }
 
   
 
@@ -75,6 +80,7 @@ export class RegistroPage implements OnInit {
 
     }
 
+    // Verificación usuario
     if (this.usuario.length < 3 || this.usuario.length > 8) {
 
       mensaje = 'El usuario debe tener entre 3 y 8 caracteres';
@@ -86,7 +92,9 @@ export class RegistroPage implements OnInit {
       await alerta.present();
       return; // Evita que se ejecute más código
 
-    } else if (this.password.length != 4 || !/^\d+$/.test(this.password)){
+    } 
+    // Verificación contraseña
+    else if (this.password.length != 4 || !/^\d+$/.test(this.password)){
 
       mensaje = 'La contraseña debe ser de 4 dígitos';
       alerta = await this.alertController.create({ // Alerta para contraseña inválida
@@ -97,7 +105,10 @@ export class RegistroPage implements OnInit {
       await alerta.present();
       return; // Evita que se ejecute más código
 
-    } else if(this.password != this.confirmPassword) {
+    } 
+    
+    // Verificación confirmación contraseña
+    else if(this.password != this.confirmPassword) {
 
       mensaje = 'Las contraseñas no coinciden';
       alerta = await this.alertController.create({ // Alerta para contraseñas que no coinciden
@@ -110,17 +121,23 @@ export class RegistroPage implements OnInit {
 
     }
 
-    this.router.navigate(['/home'], { // Redirige a home
-      state: { // envía datos a home
-        usuario: this.usuario.trim(),
-        nombre: this.nombre.trim(),
-        apellido: this.apellido.trim(),
-        educacion: this.educacion,
-        nacimiento: this.nacimiento
-      }
-    });
+    
+    localStorage.setItem('usuario', this.usuario);
+    // Se pasan los parámetros con la información a la función Insert del servicio
+    this.dataService.insertUser(
+      this.usuario,
+      this.password,
+      this.nombre, 
+      this.apellido,
+      this.email,
+      this.educacion,
+      this.telefono,
+      this.nacimiento
+    );
 
-    //Falta agregar datos a arreglo
+    // Navegación a home
+    this.router.navigate(['/home']);
+
     //Falta verificaciones de datos ingresados en inputs
 
   }

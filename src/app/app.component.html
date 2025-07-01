@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="menu-toolbar">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="menu">
+      <ion-list class="menu-list">
+        <ion-item class="menu-item" (click)="opHome()">
+          Inicio
+        </ion-item>
+        <ion-item class="menu-item" (click)="opTienda()">Tienda</ion-item>
+        <ion-item class="menu-item" (click)="opMapa()">Mapa</ion-item>
+        <ion-item class="menu-item" (click)="opLogout()">Cerrar sesión</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
 </ion-app>
